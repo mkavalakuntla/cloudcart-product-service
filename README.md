@@ -1,7 +1,7 @@
 CloudCart – Product Service
 
 
-#####################################################################################################################################
+########################################################################################
 
 1. Project Overview
 
@@ -23,7 +23,7 @@ Fully monitored & secured production system
 
 Current Phase: Level 1 – Local Foundation
 
-#####################################################################################################################################
+#######################################################################################
 
 2. Current Scope (Level 1)
 
@@ -39,7 +39,7 @@ Professional naming conventions
 
 .gitignore configuration
 
-#####################################################################################################################################
+######################################################################################
 
 3. Project Structure
 cloudcart-product-service/
@@ -60,7 +60,7 @@ cloudcart-product-service/
 ├── .gitignore
 └── README.md
 
-#####################################################################################################################################
+##########################################################################################
 
 4. Naming Convention
 
@@ -68,7 +68,7 @@ Repository Name:
 
 cloudcart-product-service
 
-#####################################################################################################################################
+#########################################################################################
 
 Why:
 
@@ -77,7 +77,7 @@ Hyphen-separated
 Service-specific naming
 Scalable for microservices architecture
 
-#####################################################################################################################################
+#########################################################################################
 
 5. Local Setup Process (Step 1)
 Create project directory
@@ -86,7 +86,7 @@ cd ~/projects
 mkdir cloudcart-product-service
 cd cloudcart-product-service
 
-#####################################################################################################################################
+########################################################################################
 
 Create base structure
 mkdir app logs scripts
@@ -100,12 +100,12 @@ touch README.md
 touch .env
 touch .gitignore
 
-#####################################################################################################################################
+########################################################################################
 
 Initialize Git
 git init
 
-#####################################################################################################################################
+########################################################################################
 
 Add ignore rules
 
@@ -117,7 +117,7 @@ __pycache__/
 .env
 logs/app.log
 
-#####################################################################################################################################
+#######################################################################################
 
 First Commit
 git add .
@@ -128,7 +128,7 @@ git remote add origin https://github.com/<username>/cloudcart-product-service.gi
 git branch -M main
 git push -u origin main
 
-#####################################################################################################################################
+######################################################################################
 
 6. Why This Structure Matters
 
@@ -138,7 +138,7 @@ Script automation readiness
 Environment-based configuration
 Scalable for containerization & Kubernetes
 
-#####################################################################################################################################
+######################################################################################
 
 7. Next Phase
 
@@ -148,3 +148,94 @@ Python virtual environment
 Flask application skeleton
 Environment variable management
 Structured logging
+
+🔹 Step 2 – Python Virtual Environment & Dependency Management
+Objective
+
+Establish an isolated Python runtime environment to ensure dependency consistency and reproducibility.
+
+Actions Performed
+
+Created virtual environment using:
+
+python3 -m venv venv
+
+
+Activated environment:
+
+source venv/bin/activate
+
+
+Installed dependencies:
+
+Flask
+
+python-dotenv
+
+Generated dependency lock file:
+
+pip freeze > app/requirements.txt
+
+Outcome
+
+Dependencies isolated from system Python
+
+Reproducible environment across systems
+
+Clean dependency tracking using requirements.txt
+
+venv/ excluded via .gitignore
+
+🔹 Step 3 – Application Skeleton with Configuration & Logging
+Objective
+
+Build a production-structured minimal Flask service.
+
+Components Implemented
+Configuration Layer (config.py)
+
+Loads environment variables from .env
+
+Centralizes runtime configuration
+
+Avoids hardcoded values
+
+Logging Layer (logger.py)
+
+Structured logging format
+
+Logs written to:
+
+logs/app.log
+
+
+Console + file handlers enabled
+
+Application Layer (app.py)
+
+Root endpoint (/)
+
+Health endpoint (/health)
+
+Service start logging
+
+Binds to 0.0.0.0
+
+Uses configurable port
+
+Validation Performed
+
+Application runs successfully
+
+Health endpoint returns valid JSON
+
+Logs generated for service start and endpoint access
+
+Configuration loaded from .env
+
+Commit this update:
+
+git add README.md
+git commit -m "Append documentation for Step 2 and Step 3 completion"
+git push
+
